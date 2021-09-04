@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=yes,minimal-ui">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <title>Geometría Proyectiva</title>
+
+  <!-- núcleo del libro interactivo -->
+  <link rel="stylesheet" href="book/css/style.css" type="text/css">
+  <script type="text/javascript" src="book/js/book.js" charset="utf-8"></script>
+  
+  <!-- personalización del usuario -->
+  <link rel="stylesheet" href="extra/fonts.css" type="text/css">
+  <link rel="stylesheet" href="extra/style.css" type="text/css">
+
+  <!-- inclusión de la biblioteca KaTex -->
+  <link rel="stylesheet" type="text/css" media="screen" href="extra/katex/katex.min.css" />
+  <script src="extra/katex/katex.min.js"></script>
+  <script src="extra/katex/auto-render.min.js" ></script>
+  <!-- Opcional en caso de requerir formulas químicas -->
+  <script src="extra/katex/mhchem.min.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [ {left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}, {left: "\\[", right: "\\]", display: true}, {left: "\\(", right: "\\)", display: false} ]
+    });
+  });
+  </script>
+</head>
+
+<body>
+  <div id="book_loader_container">
+    <div id="book_loader"></div>
+    <img src="images/general/icartesilibri_logo.svg" width="20%" style="padding-left:1em;">
+  </div>
+
+  <div id="book_container">
+    <div id="btn_back_page"></div>
+    <div id="btn_next_page"></div>
+    <button id="go_to_table_of_content"></button>
+
+    <div id="table_of_content"></div>
+
+    <div id="pages_container">
+
+      <!--  -->
+      <div class="page" style="background-color:transparent;" num="">
+      </div>
+
+		<!-- Portada  -->
+	<div class="page" style="margin:0; padding:0; background-size:contain; background-image:url(imagenes/SolucionesdeEDO.jpg);" num="">
+		<section><h1 style="position:absolute; top:25px; left:115px; color:white">Geometría Proyectiva</h1></section>
+			       
+      </div>
+
+      <!-- Contraportada -->
+      <div class="page" num="">
+		<section style="margin-top:10px; font-size:18px">
+		<p>Geometría Proyectiva:<br> 
+          <b>Material del curso: Proyectividades, el teorema fundamental de la geometría proyectiva y perspectivades.</b>
+        </p>
+		</section>
+        <section style="margin-top:60px; font-size:18px">
+		
+		 <p style="float:left; text-align:left;">
+         Miguel A Guadarrama G<br>     
+         <b>Facultad de Ciencias, UNAM</b></p>
+        <img src="images/general/logo_UNAM.svg" height="75px" style="float:right;">
+        <br style="clear:both;"><br><br>
+       
+            
+        <br style="clear:both;"><br>
+		 <p style="font-size:16px">Facultad de Ciencias<br> 
+          Calle <br> 
+          PBX: (000) 000000000<br> 
+          Código Postal<br> 
+         CDMX, México<br>
+          <a href="http://www.fciencias.unam.mx/" target="_blank">http://www.fciencias.unam.mx/</a><br><br> 
+		  ISBN:  <a href=" " target="_blank"><font color="blue">000000000 </font></a> <br><br>
+        </p>
+
+ 
+
+        <p>CDMX - 2021</p>
+          <p>LICENCIA</p>
+          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank"><img src="images/general/by-nc-sa.svg" style="height:1.75em; margin-right:0.75em;"></a>
+          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank">Creative Commons Attribution License 4.0</a>.
+        </section>
+      </div>
+	  
+		<!-- Tabla de contenidos (página 1) -->
+		<div class="page" style="background-size:contain; background-image:url(imagenes/fondo_contenido.jpg);" num-type-arabic="true" num="">
+			<div class="caja_menu">
+			<p style="color:darkorange; font-size:34px"><b>Contenido</b></p>
+			<p><b><span  class="toc_link" onclick="goToPage(2)"><a>02 <span style="font-size:20px">&nbsp;&nbsp;&nbsp;Introducción</a></span></span></b></p>
+			
+			<p><b><span  class="toc_link" onclick="goToPage(3)"><a>03 <span style="font-size:20px">&nbsp;&nbsp;&nbsp;Plano desarguesiano</a></span></span></b></p>
+			
+			<p><b><span  class="toc_link" onclick="goToPage(4)"><a>04 <span style="font-size:20px">&nbsp;&nbsp;&nbsp;Haces de líneas</a></span></span></a></span></b></p>
+			
+			<p><b><span  class="toc_link" onclick="goToPage(5)"><a>05 <span style="font-size:20px">&nbsp;&nbsp;&nbsp;Correspondencias elementales</a></span></a></span></b></p>
+			
+			<p><b><span  class="toc_link" onclick="goToPage(08)"><a>08 <span style="font-size:20px">&nbsp;&nbsp;&nbsp;Proyectividades</a></span></a></span></b></p>
+
+                    <p><b><span  style="position: relative; margin-left:50px;" class="toc_link" onclick="goToPage(12)"><a style="color:rgba(174,255,241,1)">12 <span style="font-size:20px; color: rgba(174,255,241,1);">&nbsp;&nbsp;&nbsp;El Teorema Fundamental</a></span></a></span></b></p>
+
+			        <p><b><span  style="position: relative; margin-left:50px;" class="toc_link" onclick="goToPage(14)"><a style="color:rgba(174,255,241,1)">14 <span style="font-size:20px; color: rgba(174,255,241,1);">&nbsp;&nbsp;&nbsp;Perspectividades</a></span></a></span></b></p>
+			
+				
+			</div>
+		</div>
+
+		
+
+		<!-- 3 -->	
+		<div class="page specialnum1" num-type-arabic="true" style="background:linear-gradient(45deg, rgba(17,17,17,17) 0%, rgba(9,9,121,1) 50%, rgba(2,0,36,1) 100%);">
+			<h1 style="color:yellow" align="justify">Introducción</h1>
+            <section style="color:white; width:100%; font-size:20px"> 
+             <p align=justify>En este mini book vamos explorar las  propiedades más básicas de las proyectivades. Iniciaremos definiendo el concepto de <i>has de líneas con vértice en un punto</i>, el de <i>correspondencia elemental</i>, el de <i> proyectividad</i> y por último de <i> perspecividad.</i></p> 
+            
+            <p aria-activedescendant=""align=justify>Uno de los principales objetivos es enunciar y demostrar el teorema fundamental de la geometría proyectiva.</p>
+                
+            <p align=justify>Este documento navegable está basado en el libro: <li> Coxeter H.S.M., projective Geometry, Springer Verlag, Second Edition, 1987.   </li> </p> 
+            <p>Los elementos interactivos están hechos con Geogebra y buscan que el lector actué activamente con las construcciones y pueda a partir de ellas comprender las demostraciones cuando las haya.</p>
+                
+            <p align=justify>Buscaremos mantener la  notación del libro de Coxeter con el objetivo facilitar una lectura mas ágil y una mayor compresión del libro. </p>    
+                </section>
+		
+		</div>
+
+		<!-- 4 -->		
+		<div class="page">
+			
+        
+            
+			
+		</div>		
+<!-- 10-->
+		<div class="page">
+            <h2>Haces de líneas</h2>
+            <p> Sean  \(O\) un punto y \(l\) una linea.
+            <ol><li> Cualquier subconjunto de \(l\) con más de dos puntos se le llama <i> hilera </i>.</li>
+                    <li>Al conjunto de todas las líneas que pertenece a un plano proyectivo y que son incidenes en \(O\) le llamamos <i>haz de líneas que pasan por \(O\)</i> y l denotamos con \(Haz(O)\), mientras que a \(O\) le llamamos el <i>vértice del haz.</i>  </li>
+                    <li>Si \(O\) y \(l\) no son incidentes, a cualquier hilera de \(l\) le llamamos <i>sección del haz con vértice</i> \(O\). 
+            </ol>
+            <div class="interactive" width="800" height="600" scale="85%" src="interactivos/GeoGebra5/Hacesdelineas.html"></div>
+            
+             </div>
+         <!-- 11-->
+		<div class="page">
+            <h2>Correspondencias elementales y proyectividades en el plano</h2>
+            <p>Sean \(O\) un punto y \(l\) una linea. 
+            <ol> <li>La <i>correspondencia elemental del haz \(Haz(O)\) sobre \(l\)</i> es la función $$\begin{array}{rcl} Haz(O) &\longrightarrow& l \\ x&\to& X\end{array}$$ tal que a cada línea \(x\in Haz(O)\) le asocia el punto en \(l\) definido por \(X=x\cdot l\), es decir, el punto de incidencia entre \(x\) y \(l\). Denotamos esta relación con \(x\barwedge X\).</li>
+                    
+      
+            <li> La <i>correspondencia elemental de la línea \(l\) sobre \(Haz(O)\)</i> es la función $$\begin{array}{rcl}l & \longrightarrow& Haz(O) \\  X&\to& x\end{array}$$  tal que a cada punto \(X\) en \(l\) le asocia la linea \(x\in Haz(O)\) definida por \(x=XO\), es decir, la linea que une \(X\) con \(O\). Denotamos esta relación con \(x\barwedge X\). </li> </ol>
+            
+            <p>Para denotar la imagén de una correspondencia elemental de dos o más puntos \(A,B,C,\cdots\) de un haz \(Haz(O)\) sobre una linea \(l\) usaremos el símbolo \(ABC\cdots\barwedge abc\cdots\).</p> 
+            
+            </div>
+            
+              <!-- 12-->
+		<div class="page">
+            <p> De forma similar, para denotar la imagén de dos o más lineas \(a,b,c,\cdots\) de un haz \(Haz(O)\) sobre una linea \(l\), usaremos el símbolo \(abc\cdots \barwedge ABC \cdots\).</p>
+            
+            <p>El orden de las lineas y puntos en \(ABC\cdots\barwedge abc\cdots\) y en \(abc\cdots \barwedge ABC \cdots\) no es necesariamente el orden en el que se escogen en una hilera de puntos o en un haz de líneas, de tal manera que los símbolos  \(CBA\cdots\barwedge cba\cdots\) y en \(cba\cdots \barwedge CBA \cdots\) denotan lo mismo que los respectivos símbolos previos.</p>
+            
+            <p>Para señanalar una composición de transformaciones elementales usaremos una sucesión finita y alternada de puntos y líneas: $$o,O,o_{1},O_{1},o_{2},O_{2},\ldots o_{n},O_{n}.$$
+            Tales sucesiones pueden comenzar y terminar con rectas o puntos, pero es necesario que un punto y una recta adjacentes no incidan uno en el otro. Además, supondremos que dos lineas o dos puntos alternantes (como lo son \(o_{1} \) y \(o_{2}\) o bien \(O_{1}\) y \(O_{2}\)) sean distintos.</p>
+            
+            <p>El camino de imágenes bajo la composición de correspondencias elementales \(o,O,o_{1},O_{1},o_{2},O_{2},\ldots o_{n},O_{n}\) será denotado con $$X\barwedge x\barwedge X^{\prime}\barwedge x^{\prime}\barwedge \cdots \barwedge X^{n}\barwedge x^{n}.$$ </p>
+             </div>
+            
+              <!-- 13-->
+		<div class="page">
+            <p>O bien, simplemente con $$X\barwedge x^{n}\quad X\barwedge X^{n}, \quad x\barwedge X^{n},\quad x\barwedge x^{n}.$$</p>
+            
+            <div class="interactive" width="800" height="600" scale="85%" src="interactivos/GeoGebra5/composicioncorrespondencias.html"></div>
+            </div>
+            
+              <!-- 14-->
+		<div class="page">
+            
+            <h2>Proyectividades</h2>
+            <p>Una <i>proyectividad</i> es una composición finita de correspondencias elementales.</p>
+            Hay cuatro tipos de proyectividades: <ol> <li>aquellas que relacionan los puntos de una linea recta  y las líneas de un haz (denotadas con \(X\barwedge x^{n}\)),</li>
+            <li>aquellas que relacionan los puntos de una línea y las puntos de otra línea (denotadas con \(X\barwedge X^{n}\)),</li> 
+            <li>aquellas que relacionan las líneas de un haz y los puntos de una linea (denotadas con \(x\barwedge X^{n}\)),</li> 
+            <li>aquellas que relacionan las líneas de un haz y las líneas de otro haz (denotadas con \(x\barwedge x^{n}\)). </li>
+            </ol>
+            <p>Enunciaremos la siguiente proposición sin prueba.</p>
+            <p>  <b>Proposición:</b> Si una proyectividad deja invariante cualquier terna de puntos de una linea recta, entonces deja invariante a cada punto de la recta.</p>
+            
+            <p>  <b>Proposición:</b> Si \(A,B,C,X\) son cuatro puntos distintos en una linea \(l\) y \(A^{\prime},B^{\prime},C^{\prime}\) son tres puntos distintos en otra linea \(m\), entonces existe una proyectividad y un punto \(X^{\prime}\) en \(m\) tal que  \(ABCX\barwedge A^{\prime}B^{\prime}C^{\prime}X^{\prime}\).</p>
+       </div>
+            
+              <!-- 15-->
+		<div class="page">  
+            <p>  <b>Demostración:</b> Primero veremos el caso en el que la cuarteta  \(A,B,C,X\) y la terna \(A^{\prime},B^{\prime},C^{\prime}\) de puntos están en lineas distintas \(l\) y \(m\).</p> 
+             
+                    <p>Del haz \(Haz(A^{\prime})\) consideramos las líneas \(a^{\prime}=AA^{\prime},b^{\prime}=BA^{\prime},c^{\prime}=CA^{\prime},d^{\prime}=XA^{\prime}. \) Además, del haz \(Haz(A)\) consideramos las líneas \(a=AA^{\prime},b=AB^{\prime},c=AC^{\prime}. \)</p>
+                    <p>Ahora consideramos la linea \(n\) que une los puntos de intersección \(N\) y \(M\) de las líneas \(AB^{\prime}\) con \(AB^{\prime}\) y \(AC^{\prime}\) con \(CB^{\prime}\), respectivamente. </p>
+                    <p>Al punto de intersección entre las lineas \(n\) y \(a\) le llamamos \(G\), mientras que al punto de intersección entre las lineas \(n\) y \(d^{\prime}= XA^{\prime}\) le llamamos \(Q\). Esto determina un punto \(X^{\prime}=(AQ)\cdot m\) en la linea \(m\).
+                     </p>
+                <ul>
+                    <li> De esta manera asociamos los puntos \(A,B,C,X\) con las líneas \(a^{\prime},b^{\prime},c^{\prime},d^{\prime}\), con la correspondencia elemental de \(l\) sobre el haz \(Haz(A^{\prime})\), en símbolos tenemos $$ABCDX\barwedge a^{\prime}b^{\prime}c^{\prime}d^{\prime}.$$  </li>
+                    <li>Las líneas \(a^{\prime},b^{\prime},c^{\prime},d^{\prime}\) las asociamos con los puntos \(G,N,M,Q\) bajo la correspondencia elemental del haz \(Haz(A^{\prime})\) sobre la linea \(n\). Así, obtenemos que $$ abcd \barwedge GNMQ $$</li>
+                    </ul>
+                    </div>
+            
+              <!-- 16-->
+		<div class="page"> 
+                   
+              <ul>
+                  <li>Ahora usamos la correspondencia elemental de \(n\) sobre el haz con vértice en A \(Haz(A)\), para asociar los puntos \(G,N,M,Q\) con las líneas \(a,b,c,d\), es decir por $$GNMQ \barwedge abcd.$$ </li>
+                  <li>Por último, usamos la correspondecia elemental del haz \(Haz(A)\) sobre la linea \(m\), para obtener que: $$abcd \barwedge A^{\prime}B^{\prime}C^{\prime}X^{\prime}. $$</li>
+             </ul>
+             <p align="right"><b>QED.</b></p>
+            
+            <div class="interactive" width="800" height="600" scale="85%" src="interactivos/GeoGebra5/3puntosdeterminan1proyectidad1.html"></div>
+                         
+            </div>
+            
+              <!-- 17-->
+		<div class="page">  
+            <p>Ahora veremos el caso en el que la cuarteta \(A,B,C,X\) y la terna \(A^{\prime},B^{\prime},C^{\prime}\) de puntos están en la misma linea \(l\). Siendo así, primero elegimos una línea arbitraria \(m\) distinta de \(l\) y un punto \(O\) no incidente en la linea \(l\) ni en \(m\). Ahora realizamos las siguientes dos correspondencias elementales:</p>             
+            <ol>
+                <li>de la linea \(l\) sobre el Haz \(Haz(O)\) para obtener $$ABCDX\barwedge stuv,$$ donde \(s=OA,t=OB,u=OC,v=OX\).</li>
+                <li> del haz \(Haz(O)\) sobre la linea \(l\) para obtener $$ stuv\barwedge A_{1}B_{1}C_{1}X_{1},$$ donde \( A_{1}=m \cdot s,B_{1}=m \cdot t,C_{1}=m \cdot u,X_{1}=m \cdot v\).  </li>
+            </ol>
+            <p>Por último, aplicamos una perspectividad como en el primer caso, aplicado a la cuarteta de puntos \(A_{1},B_{1},C_{1},X_{1}\) incidentes en la linea \(m\) y la terna de puntos \(A^{\prime},B^{\prime},C^{\prime}\) de la línea \(l\). <b>QED.</b></p>
+             </div>
+            
+              <!-- 18-->
+		<div class="page">
+            <div class="interactive" width="800" height="600" scale="85%" src="interactivos/GeoGebra5/3puntosdeterminan1proyectidad2.html"></div>
+            <h3>El teorema fundamental de la geometria proyectiva</h3>
+            <b>Teorema:</b>
+            Una correspondencia entre tres puntos colineales \(A,B\) y \(C\) y una segunda terna de puntos colineales \(A^{\prime},B^{\prime}\) y \(C^{\prime}\) determina una única proyectividad.
+            <p><b>Demostración:</b></p>
+            <p>Por el contrario, supongamos que hay dos proyectividades distintas que envían puntos en puntos y tales que $$ABCX\barwedge A^{\prime}B^{\prime}C^{\prime}X^{\prime}\quad \text{y} \quad ABCX\barwedge A^{\prime}B^{\prime}C^{\prime}X^{\prime\prime},$$ donde \(X^{\prime\prime} \) es distinto de \(X^{\prime}\). Así, componiendo en orden inverso las correspondencias elementales que dan origen a la   </p>
+            </div>
+            
+              <!-- 19-->
+		<div class="page">
+             <p>proyectividad \(ABCX\barwedge A^{\prime}B^{\prime}C^{\prime}X^{\prime},\) obtenemos una proyectividad que envía 
+             \( A^{\prime}B^{\prime}C^{\prime}X^{\prime}\)  en \(ABCX\). La composición de esta proyectividad con aquella que envía \(ABCX\) en \( A^{\prime}B^{\prime}C^{\prime}X^{\prime\prime}\) obtenemos una proyectividad que cumple que $$ A^{\prime}B^{\prime}C^{\prime}X^{\prime}\barwedge ABCX \barwedge A^{\prime}B^{\prime}C^{\prime}X^{\prime\prime}. $$ Es decir, envía \( A^{\prime},B^{\prime},C^{\prime},X^{\prime}\) en  \(A^{\prime},B^{\prime},C^{\prime},X^{\prime\prime}\) respectivamente. Como esta proyectividad deja tres puntos invariantes, entonces deja invariantes a todos los puntos de la línea a la cual pertenecen. Esto implicaría que \(X^{\prime\prime}= X^{\prime}\), lo cual no es posible. Así, hay una única proyectividad tal que \(ABC\barwedge  A^{\prime}B^{\prime}C^{\prime}. \) <b>QED.</b>  </p>
+            
+             <p> En el enunciado del teorema fundamental de la geometría proyectiva podemos remplazar alguna de las ternas de puntos (o incluso ambas) por <i> tres líneas concurrentes </i> para obtener que cualquiera de las relaciones siguientes determina una única proyectividad $$ABC\barwedge A^{\prime}B^{\prime}C^{\prime}\quad ABC \barwedge abc,\quad abc\barwedge ABC \quad abc\barwedge a^{\prime}b^{\prime}c^{\prime}.$$</p>
+            
+             <p> Por otro lado, cada una de las siguientes relaciones $$ABCD\barwedge A^{\prime}B^{\prime}C^{\prime}D^{\prime}\quad ABCD \barwedge abcd, \quad abcd\barwedge a^{\prime}b^{\prime}c^{\prime}d^{\prime}.$$ expresa una propiedad de ocho puntos, de cuatro puntos y cuatro lineas o bien, de ocho lineas, tal que la correspondencia entre cualesquiera siete de los ocho determina la del restante.</p>
+         </div>
+
+            
+            <!-- 20-->
+		<div class="page">
+    <h2>Perspectividades</h2>
+            <p>Hay un grupo de proyectividades que son tan importantes como para asignarles un nombre especial y su propio signo.</p> 
+            
+            <p>Una <i>perspectividad</i> es una composición de dos correspondencias elementales.  </p> <p>Notemos que una perspectividad asigna los puntos de una línea en los puntos de otra (no necesariamente distinta) línea, o bién, asigna las líneas de una haz en las líneas de otro (no necesariamente distinto) haz. La correspondencia entre lineas o bien entre puntos de una perspectividad la denotaremos con ayuda del símbolo \(\doublebarwedge\).</p>
+            
+            <p>Si la sucesión \(l,O,m \) define una perspectividad que se obtiene de la composición de una correspondencia elemental de una linea \(l\) sobre un haz \(Haz(O)\) seguida de una correspondencia elemental  del haz \(Haz(O)\) sobre la linea \(m\), al vértice de \(Haz(O)\) le llamamos <i>centro de la perspectividad</i>.</p> 
+            <p> Similarmente, si \(O,m,P \) define una perspectividad donde  \(O\) es el vértice del haz \(Haz(O)\), \(m\) es una línea y \(P\) es el vértice del haz \(Haz(P)\), a la línea \(m\) le llamamos <i> eje de la perspectividad</i>.</p>
+            
+            </div>
+
+            
+            <!-- 21-->
+		<div class="page">
+            
+            <p> <b>Proposición</b> Sean \(h_{1}\) y \(h_{2}\) dos hileras de puntos en lineas \(l\) y \(m\) respectivamente y \(\overset{O}{\doublebarwedge}\) una perspectividad con centro \(O\). Las siguientes condiciones son equivalentes 
+                <ol> <li> \(h_{1}\) y \(h_{2}\) están relacionadas mediante la perspectividad \(\overset{O}{\doublebarwedge}\).
+                    </li>
+                    <li>\(h_{1}\) y \(h_{2}\) son secciones del haz \(Haz(O)\).</li>
+                    <li> Si \(X\) es un punto en \(h_{1}\) y \(X^{\prime}\) es un punto en \(h_{2}\), y la proyectividad \(\overset{O}{\doublebarwedge}\) asigna \(X\) con \(X^{\prime}\), entonces la línea \(XX^{\prime}\) pertenece al haz \(Haz(O)\).</li>
+                    
+                </ol> </p>
+                <div class="interactive" width="800" height="600" scale="85%" src="interactivos/GeoGebra5/perspectividades1.html"></div>
+            
+        </div>
+
+            
+            <!-- 22-->
+		<div class="page">
+
+            <p> <b>Proposición</b> Sean \(Haz(O)\) y \(Haz(P)\) dos haces  y \(\overset{l}{\doublebarwedge}\) es una perspectividad con eje en \(l\). Las siguientes condiciones son equivalentes 
+                <ol> <li>  \(Haz(O)\) y \(Haz(P)\) están relacionadas mediante la perspectividad \(\overset{l}{\doublebarwedge}\).
+                    </li>
+                    <li>Existe una hilera de puntos \(h\) que es una sección de ambos haces \(Haz(O)\) y \(Haz(P)\).</li>
+                    <li> Si \(x\) es una línea en \(Haz(O)\) y \(x^{\prime}\) es una línea en \(Haz(P)\), y la proyectividad \(\overset{l}{\doublebarwedge}\) asigna \(x\) con \(x^{\prime}\), entonces el punto de intersección \(x\cdot x^{\prime}\) pertenece a la línea \(l\).</li>               
+                                      
+                </ol> </p>
+       <div class="interactive" width="800" height="600" scale="85%" src="interactivos/GeoGebra5/perspectividades2.html"></div>
+
+            
+    </div>
+
+            <!-- 23-->
+        <div class="page">
+
+            <p> <b>Proposición:</b> Sean \(A,B,C\) tres puntos en la linea \(l\) y \(A^{\prime\prime},B^{\prime\prime},C^{\prime\prime}\) tres puntos en la recta \(n\). Si \(l\) y \(n\) son distintas, la proyectividad que cumple que \(ABC\barwedge A^{\prime\prime}B^{\prime\prime}C^{\prime\prime}\) se escribe como composición de dos perspectividades.</p> 
+                
+                    <p>  <b>Demostración:</b> Del haz \(Haz(A^{\prime})\) consideramos las líneas \(a^{\prime\prime}=AA^{\prime\prime},b^{\prime\prime}=BA^{\prime\prime},c^{\prime\prime}=CA^{\prime\prime}. \) Además, del haz \(Haz(A)\) consideramos las líneas \(a=AA^{\prime\prime},b=AB^{\prime\prime},c=AC^{\prime\prime}. \)</p>
+                    <p>Ahora consideramos la linea \(m\) que une los puntos de intersección \(B^{\prime}\) y \(C^{\prime}\) de las líneas \(AB^{\prime\prime}\) con \(A^{\prime\prime}B\) y \(AC^{\prime\prime}\) con \(A^{\prime\prime}C\), respectivemente. </p>
+                    <p>Al punto de intersección entre las lineas \(m\) y \(a\) le llamamos \(A^{\prime}\).
+                     </p>
+                
+                    <li> De esta manera asociamos los puntos \(A,B,C\) con las líneas \(a^{\prime\prime},b^{\prime\prime},c^{\prime\prime}\), con la correspondencia elemental de \(l\) sobre el haz \(Haz(A^{\prime})\), en símbolos tenemos $$ABC\barwedge a^{\prime\prime}b^{\prime\prime}c^{\prime\prime}.$$  </li>
+                    <li>Ahora, las líneas \(a^{\prime\prime},b^{\prime\prime},c^{\prime\prime}\) las asociamos con los puntos \(A^{\prime},B^{\prime},X^{\prime}\) bajo la correspondencia elemental del haz \(Haz(A^{\prime})\) sobre la linea \(m\). Así, obtenemos que $$ a^{\prime\prime}b^{\prime\prime}c^{\prime\prime} \barwedge A^{\prime}B^{\prime}C^{\prime} $$</li>
+                    La composición de estas dos correspondencias elementales 
+                    </div>
+
+            <!-- 24-->
+        <div class="page">
+                    determina la perspectividad que cumple que $$ ABC \doublebarwedge A^{\prime}B^{\prime}C^{\prime} $$
+                    <li>Ahora usamos la correspondencia elemental de \(m\) sobre el haz con vértice en A \(Haz(A)\), para asociar los puntos \(A^{\prime},B^{\prime},C^{\prime}\) con las líneas \(a,b,c\), es decir por $$A^{\prime}B^{\prime}C^{\prime} \barwedge abc.$$ </li>
+                    <li>Por último, usamos la correspondecia elemental del haz \(Haz(A)\) sobre la linea \(n\), para obtener que: $$abc \barwedge A^{\prime}B^{\prime}C^{\prime}. $$  </li>
+                    La composición de estas dos correspondencias elementales determina la perspectividad que cumple que $$ A^{\prime}B^{\prime}C^{\prime} \doublebarwedge A^{\prime\prime}B^{\prime\prime}C^{\prime\prime}. $$
+                    Así, tenemos que $$ABC \doublebarwedge A^{\prime}B^{\prime}C^{\prime}\doublebarwedge A^{\prime\prime}B^{\prime\prime}C^{\prime\prime}.$$
+            
+                    Notemos que si en el enunciado de la proposición intercambiamos las palabras  puntos y líneas obtenemos una nueva proposición:
+            
+        </div>
+
+            <!-- 25-->
+        <div class="page">
+                    <p> <b>Proposición:</b> Sean \(a,b,c\) tres líneas que inciden en un punto \(L\) y \(a^{\prime\prime},b^{\prime\prime},c^{\prime\prime}\) tres lineas que inciden en un punto \(N\). Si \(L\) y \(N\) son distintos, la proyectividad que cumple que \(abc\barwedge a^{\prime\prime}b^{\prime\prime}c^{\prime\prime}\) se escribe como composición de dos perspectividades.</p>  
+                    <p>  <b>Demostración:</b> De la línea \(a^{\prime \prime}\) consideramos las hilera de puntos \(A_{1}=aa^{\prime\prime},B_{1}=ba^{\prime\prime},C_{1}=ca^{\prime\prime}. \) Además, de la línea \(a\) consideramos la hilera \(A_{2}=A_{1}=aa^{\prime\prime},B_{2}=ab^{\prime\prime},C_{2}=ac^{\prime\prime}. \)</p>
+                    <p>Ahora consideramos la linea \(b^{\prime}\), que une los puntos \(B_{1}\) y \(B_{2}\). También, la línea \(c^{\prime}\) que une los puntos \(C_{1}\) y \(C_{2}\). Sea \(Q\) la interseccíón de \(b^{\prime}\) y \(c^{\prime}\) y \(a^{\prime}\) la recta que une los puntos \(A_{1}\) y \(Q\) </p>
+            
+                    <div class="interactive" width="800" height="600" scale="85%" src="interactivos/GeoGebra5/Proyectividad3lineas.html"></div>
+        </div>
+             <!-- 25-->
+        <div class="page"> 
+                                    
+                    <li> De esta manera primero consideramos la correspondencia elemental de \(Haz(L)\) sobre la línea \(a^{\prime \prime}\) que  asocia las líneas \(a,b,c\) con los puntos \(A_{1},B_{1},C_{1}\). Ahora, por medio de la correspondencia elemental de la línea \(a^{\prime \prime}\) sobre \(Haz(Q)\) ,a los puntos \(A_{1},B_{1},C_{1}\) les asociamos las rectas \(a^{\prime},b^{\prime},c^{\prime}\). La composición de estas dos correspondencias elementales  determina la perspectividad que cumple que $$ abc \doublebarwedge a^{\prime}b^{\prime}c^{\prime}. $$</li>
+                    <li>Ahora, las líneas \(a^{\prime},b^{\prime},c^{\prime}\) las asociamos con los puntos \(A_{2},B_{2},C_{2},\) bajo la correspondencia elemental del haz \(Haz(Q)\) sobre la linea \(a^{\prime\prime}\). Por último, bajo la correspondencia elemental de la linea \(a^{\prime\prime}\) sobre \(Haz(N)\), a los puntos \(A_{2},B_{2},C_{2}\) les asociamos las líneas \(a^{\prime\prime},b^{\prime\prime},c^{\prime\prime} \).                                 
+                    <p>La composición de estas dos correspondencias elementales determina la perspectividad que cumple que $$ a^{\prime}b^{\prime}c^{\prime} \doublebarwedge a^{\prime\prime}b^{\prime\prime}c^{\prime\prime}. $$ </li> 
+                    Así, tenemos la composición de dos perspectividades $$abc \doublebarwedge a^{\prime}b^{\prime}c^{\prime}\doublebarwedge a^{\prime\prime}b^{\prime\prime}c^{\prime\prime}.$$</p> <p align="right"><b>QED.</b></p>
+                     
+        </div>
+
+            <!-- 26-->
+        <div class="page"> 
+                    <p> Ahora veremos que cuatro puntos colineales pueden ser intercambiados en parejas por medio de una proyectividad. </p>
+                        <b>Proposición:</b> Sean \(A,B,C,D\) cuatro puntos en una línea \(l\). Entonces, existe una proyectividad tal que \(ABCD\barwedge BADC\).     
+            <p><b>Demostración:</b> Para demostrar la proposición primero consideramos un punto \(R\) no incidente en la línea \(l\).  Sea \(m\) una línea abitraria que pasa por \(D\) y sean \(T,Q,W\) los puntos de intersección de \(m\) con las líneas \(RA, RB \) y \(RC\), respectivamente.  Sean \(Z\) el punto de intersección entre \(AQ\) y \(RC\).</p> 
+                        
+                    <div class="interactive" width="800" height="600" scale="85%" src="interactivos/GeoGebra5/ProyeftividadABCDenBACD.html"></div>    
+             </div>
+
+            <!-- 27-->
+        <div class="page"> 
+                   
+            <p>Entonces consideramos la siguiente composición de perspectividades $$ABCD\overset{Q}{\doublebarwedge} ZRCW \overset{A}{\doublebarwedge}QTDW \overset{R}{\doublebarwedge}BADC.$$
+                    Así, obtenemos la proyectivdad que cumple que $$ABCD\barwedge BADC.$$</p><p align="right"><b>QED.</b></p>
+            
+            <p> <b>Proposición:</b> Sean \(A,B,C\) tres puntos que inciden en una línea \(l\). Entonces existen un punto \(F\) en \(l\) y una proyectividad tal que \(ABC\barwedge AFB\). </p>  
+            <p>  <b>Demostración:</b> Primero, en una línea distinta de \(l\) que pase por \(C\) escogemos dos puntos distintos \(R\) y \(S\). Luego, sea \(Q\) la intersección de las línea s \(AR\) y \(BS\). Además, consideramos \(P\), el punto de intersección de \(RB\) y \(AS\). Por último, sea \(F\) el punto de intersección de las líneas \(l\) y \(QP\).  </p>
+            <p>Entonces, la proyectividad que buscamos se ve como composición de dos perspectividades, las cuales cumplen que $$ ABC \overset{R}{\doublebarwedge} APS \overset{Q}{\doublebarwedge} AFB.$$</p>
+            
+             </div>
+
+            <!-- 28-->
+        <div class="page"> 
+            <div class="interactive" width="800" height="600" scale="85%" src="interactivos/GeoGebra5/Cuartoarmonico.html"></div>
+            
+            
+            <p>Una segunda forma de construir la proyectividad es considerando la composición de dos perspectividades que cumplen que $$ABC \overset{S}{\doublebarwedge}AQR \overset{P}{\doublebarwedge} AFB.$$  </p>
+            <p align="right"><b>QED.</b></p>
+            
+            <p>Cuando una proyectividad asigna a un punto \(A\) (o una recta \(a\)) el mismo punto \(A\) (o la misma recta \(a\)), entonces decimos que <b>\(A\) es invariante</b> (o bien que <b>\(a\) es invariante</b>).  </p>
+    
+        
+        </div>
+
+            <!-- 29-->
+        <div class="page"> 
+                    
+                     
+                           
+        </div>
+        <!-- 30-->
+		<div class="page" num="" style="background-image: radial-gradient(white, #ecf0f1, #e3e5e7); display:flex; align-items:center; justify-content:center;">
+          <a style="width:50%" target="_blank" href="http://descartes.matem.unam.mx/"><img src="images/general/logo_descartes.svg" width="75%"></a>
+        </div>
+      </div>
+
+		
+
+    <!-- [cierra] pages_container -->
+    </div>
+  <!-- [cierra] book_container -->
+  </div>
+
+</body>
+</html>
