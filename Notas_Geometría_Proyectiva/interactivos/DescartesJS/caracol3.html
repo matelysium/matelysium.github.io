@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>TITULO</title>
+  <link rel="stylesheet" href="../fonts/font3.css" type="text/css">
+  <link rel="stylesheet" href="../fonts/font4.css" type="text/css">
+  <link rel="stylesheet" href="../fonts/font5.css" type="text/css">
+  
+  <script type="text/javascript" src="lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="margin:0;padding:0; border:0; overflow: hidden;">
+  <ajs name="Descartes" code="Descartes" width="700" height="500">
+    <param name="tamaño" value="700x500">
+    <param name="decimal_symbol" value=".">
+    <param name="expand" value="fit">
+    <param name="nombre" value="superficie_almohada">
+    <param name="Versión" value="5.5">
+    <param name="editable" value="sí">
+    <param name="Idioma" value="español">
+    <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+    <param name="E_01" value="tipo='R2' id='E2' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='60' O.x='0' O.y='0' despl_imagen='arr-izq' fondo='ff000000' red='no' red10='no' ejes='no' texto='no' números='sí' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
+    <param name="E_02" value="tipo='R3' R3='sí' id='E1' x='0' y='0' ancho='100%' alto='100%' dibujar-si='1' fijo='no' escala='60' O.x='0' O.y='30' despl_imagen='arr-izq' fondo='ff000000' despliegue='pintor' cortar='no' resizable='false' sensible_a_los_movimientos_del_ratón='no' border_width='0' border_color='000000' border_radius='0' ">
+    <param name="C_01" value="id='ver' tipo='numérico' interfaz='menú' región='sur' espacio='E1' nombre='ver' expresión='(0,0)' valor='1' decimales='2' fijo='sí' visible='no' opciones='Sólido [1],Transparente [2],Modelo alambre [3]' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' ">
+    <param name="C_02" value="id='t' tipo='numérico' interfaz='pulsador' región='sur' espacio='E2' nombre='t' expresión='(0,0,150,40)' valor='2' incr='0.1' min='0' max='3' discreto='no' decimales='2' fijo='sí' visible='sí' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' btn_pos='v_left' ">
+    <param name="C_03" value="id='a' tipo='numérico' interfaz='pulsador' región='sur' espacio='E2' nombre='a' expresión='(0,0,150,40)' valor='1.5' incr='0.1' discreto='no' decimales='2' fijo='sí' visible='sí' label_color='e0e4e8' label_text_color='000000' font_family='SansSerif' fuente puntos='0' negrita='no' cursiva='no' btn_pos='v_left' ">
+    <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='pi=3.14159;E1.rot.z=30;E1.rot.y=30' ">
+    <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+    <param name="S_01" value="espacio='E1' tipo='superficie' fondo='no' color='00ff00' color_reverso='ff8400' dibujar-si='ver=1' expresión='U=pi*u;V=t*pi*v;x=a*1.2^V*(sin(U)^2*sin(V));y=a*1.2^V*(sin(U)^2*cos(V));z=a*1.2^V*(sin(U)*cos(U));' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='8cc0c0c0' modelo='metal' Nu='20' Nv='20' ">
+    <param name="S_02" value="espacio='E1' tipo='superficie' fondo='no' color='90eeffaa' color_reverso='a200ffff' dibujar-si='ver=2' expresión='U=pi*u;V=t*pi*v;x=a*1.2^V*(sin(U)^2*sin(V));y=a*1.2^V*(sin(U)^2*cos(V));z=a*1.2^V*(sin(U)*cos(U));' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='metal' Nu='20' Nv='20' ">
+    <param name="S_03" value="espacio='E1' tipo='superficie' fondo='no' color='77c0c0c0' color_reverso='aec0c0c0' dibujar-si='ver=3' expresión='U=pi*u;V=t*pi*v;x=a*1.2^V*(sin(U)^2*sin(V));y=a*1.2^V*(sin(U)^2*cos(V));z=a*1.2^V*(sin(U)*cos(U));' rotini='(0,0,0)' posini='(0,0,0)' rotfin='(0,0,0)' posfin='(0,0,0)' cortar='no' aristas='no' modelo='alambre' Nu='20' Nv='20' ">
+  </ajs>
+
+
+
+</body>
+</html>

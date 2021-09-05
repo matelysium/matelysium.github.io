@@ -1,0 +1,466 @@
+/**
+ * @author Joel Espinosa Longi
+ * @licencia Atribución-CompartirIgual 4.0 Internacional  - https://creativecommons.org/licenses/by-sa/4.0/deed.es
+ */
+
+@import "loader.css";
+
+:root {
+  --pages_container_width  : 1280px;
+  --pages_container_height : 825px;
+  --left_right_margin_pages : 30px;
+
+  --page-left-margin: 50px;
+  --page-right-margin: 50px;
+  --page-top-margin: 30px;
+  --page-bottom-margin: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#book_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ecf0f1;
+}
+
+#go_to_table_of_content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  z-index: 1;
+  background-color: #ecf0f1;
+  background-size: cover;
+  padding: 0;
+}
+#go_to_table_of_content {
+  background-image: url("img/table_of_content.svg");
+}
+
+#btn_back_page, #btn_next_page {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+  z-index: 1;
+}
+#btn_back_page {
+  background-image: url("img/back.svg");
+  left: 0;
+}
+#btn_next_page {
+  background-image: url("img/next.svg");
+  right: 0;
+}
+.page {
+  position: relative;
+  width: calc(var(--pages_container_width) / 2);
+  height: 100%;
+  background-color: white;
+  box-sizing: border-box;
+  padding: var(--page-top-margin) var(--page-right-margin) var(--page-bottom-margin) var(--page-left-margin);
+  text-align: justify;
+}
+#pages_container .page:nth-child(odd) {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.toc_link {
+  font-size: 95%;
+  padding: 0;
+  margin-bottom: 0.5em;
+  color: #222f3e;
+  cursor: pointer;
+ 
+}
+.toc_link:hover, .toc_link:hover a, .toc_link:hover .toc_number {
+  background-color: hsl(205, 87%, 20%);
+}
+.toc_link a {
+  padding-left: 1em;
+  padding-right: 0.2em;
+  background-color: aliceblue;
+  text-decoration: none;
+  color: inherit;
+}
+
+.toca {
+  font-size: 80%;
+  padding: 0;
+  margin-bottom: 0.5em;
+  color: #ff00c2;
+  cursor: pointer;
+  
+   
+}
+.toca:hover, .toca:hover a, .toca:hover .toca_number {
+  background-color: hsl(105, 87%, 20%);
+}
+.toca a {
+	padding-top:0.1em;
+	padding-left: 1em;
+	padding-right: 0.2em;
+	background-color: brown;
+	text-decoration: none;
+	color: inherit;
+  
+}
+
+.toca_number {
+  background-color: brown;
+  float: right;
+}
+
+.toc_number {
+  background-color: aliceblue;
+  float: right;
+}
+
+.page_number {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 80%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.footnote {
+  display: block;
+}
+.footnote::before {
+  content: attr(number);
+  position: absolute;
+  display: inline;
+  font-size: 75%;
+  left: -0;
+}
+.footnote_container {
+  position: absolute;
+  width: calc(100% - var(--page-left-margin) - var(--page-right-margin));
+  bottom: 48px;
+  font-size: 75%;
+  border-top: 2px solid #3c6382;
+  padding-left: 1em;
+}
+
+/*  */
+sup {
+  font-size: 65%;
+  font-weight: bold;
+  padding-left: 0.2em;
+}
+sub {
+  font-size: 65%;
+}
+h1 {
+  font-size: 160%;
+  margin-top: 0;
+}
+.note {
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 90%;
+}
+.image_expand {
+  display: block;
+  margin: 0.5em auto 1em auto;
+  cursor: pointer;
+}
+.image_link {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.btn_link {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  right: -3px;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  border-radius:0;
+  background-color: white;
+  background-size: cover;
+  background-image: url("img/link.svg");
+  cursor: pointer;
+}
+iframe {
+  border: none;
+}
+video {
+  display: block;
+  margin: 1.25 auto 0 auto;
+}
+.btn_ampliar {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  right: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  border-radius:0;
+  background-color: white;
+  background-size: cover;
+  background-image: url("img/ampliar.svg");
+  cursor: pointer;
+  
+}
+
+.interactive {
+  position: relative;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 15px 0;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+ }
+ 
+ .interactive2 {
+  position: relative;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 15px 0;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+ }
+ 
+figure {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+figcaption {
+  text-align: center;
+  font-size: 80%;
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+}
+
+/* Pestañas */
+.pestana_mat1
+{
+    position: relative;
+	width: 134px;
+	margin-top: -34px;
+	margin-left: -54px;
+	background-image:url("../../imagenes/titulos/mat1.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_mat2
+{
+    position: relative;
+	width: 134px;
+	margin-top: -34px;
+	margin-left: 460px;
+	background-image:url("../../imagenes/titulos/mat2.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_uni1
+{
+    position: relative;
+	width: 134px;
+	margin-top: -34px;
+	margin-left: -54px;
+	background-image:url("../../imagenes/titulos/univa.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_uni2
+{
+    position: relative;
+	width: 134px;
+	margin-top: -34px;
+	margin-left: 460px;
+	background-image:url("../../imagenes/titulos/univb.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_descartes1
+{
+    position: relative;
+	width: 200px;
+	margin-top: -30px;
+	margin-left: -50px;
+	background-image:url("../../images/general/logo_descartes2.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_descartes2
+{
+    position: relative;
+	width: 200px;
+	margin-top: -30px;
+	margin-left: 390px;
+	background-image:url("../../images/general/logo_descartes2.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_nov1
+{
+    position: relative;
+	width: 134px;
+	margin-top: -34px;
+	margin-left: -54px;
+	background-image:url("../../imagenes/titulos/nov1.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_nov2
+{
+    position: relative;
+	width: 134px;
+	margin-top: -34px;
+	margin-left: 460px;
+	background-image:url("../../imagenes/titulos/nov2.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_act1
+{
+    position: relative;
+	width: 116px;
+	margin-top: -26px;
+	margin-left: -2px;
+	background-image:url("../../imagenes/titulos/act1.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_act2
+{
+    position: relative;
+	width: 116px;
+	margin-top: -34px;
+	margin-left: 478px;
+	background-image:url("../../imagenes/titulos/act2.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_inv1
+{
+    position: relative;
+	width: 132px;
+	margin-top: -34px;
+	margin-left: -54px;
+	background-image:url("../../imagenes/titulos/inv1.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_inv2
+{
+    position: relative;
+	width: 132px;
+	margin-top: -34px;
+	margin-left: 460px;
+	background-image:url("../../imagenes/titulos/inv2.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_par1
+{
+    position: relative;
+	width: 132px;
+	margin-top: -34px;
+	margin-left: -54px;
+	background-image:url("../../imagenes/titulos/par1.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_par2
+{
+    position: relative;
+	width: 132px;
+	margin-top: -34px;
+	margin-left: 460px;
+	background-image:url("../../imagenes/titulos/par2.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_qui1
+{
+    position: relative;
+	width: 99px;
+	margin-top: -34px;
+	margin-left: -50px;
+	background-image:url("../../imagenes/titulos/qui1.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_qui2
+{
+    position: relative;
+	width: 99px;
+	margin-top: -34px;
+	margin-left: 492px;
+	background-image:url("../../imagenes/titulos/qui2.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_ilu1
+{
+    position: relative;
+	width: 168px;
+	margin-top: -34px;
+	margin-left: -56px;
+	background-image:url("../../imagenes/titulos/ilu1.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_ilu2
+{
+    position: relative;
+	width: 168px;
+	margin-top: -34px;
+	margin-left: 427px;
+	background-image:url("../../imagenes/titulos/ilu2.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_retroa
+{
+    position: relative;
+	width: 488px;
+	margin-top: -34px;
+	margin-left: -50px;
+	background-image:url("../../imagenes/titulos/retroa.png");
+	background-repeat: no-repeat;
+}
+
+.pestana_retrob
+{
+    position: relative;
+	width: 168px;
+	margin-top: -34px;
+	margin-left: 490px;
+	background-image:url("../../imagenes/titulos/retrob.png");
+	background-repeat: no-repeat;
+}
