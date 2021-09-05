@@ -1,10 +1,14 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: default
 ---
+# Matelysium
+## Recursos
+### Libros interactivos de geometría proyectiva
 
-# H1 Este es un titulo primero
+- [Triángulos y cuadrilateros](./Notas_Geometría_Proyectiva/Triangulos_ y_ cuadrilateros.html)
+- [Proyectividades](./Notas_Geometría_Proyectiva/Proyectividades.html)
 
-## H2 este es un titulo segundo
+## Cursos
+### Seminario de Geometría B "Geometrías no euclidianas doradas"
+### Geometría Proyectiva
+### Álgebra Geométrica
