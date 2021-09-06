@@ -10,4 +10,4 @@ layout: default
 ### Geometría Proyectiva
 ### Álgebra Geométrica
 
-[Clase Lunes 6 de septiembre superficies](Superfiecies.html)
+[Clase Lunes 6 de septiembre superficies](Superficies.html)
